@@ -10,6 +10,7 @@ import {
   Button,
 } from "./Assignment-1";
 
+import Question2 from "./Assignment-2";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const url =
@@ -70,5 +71,7 @@ root.render(
     <TaskList taskList={tasks} />
     <hr />
     <Button Text={"Passing text from index.js"} Color={"blue"} />
+
+    <Question2 />
   </>
 );

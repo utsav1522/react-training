@@ -6,12 +6,28 @@ import CounterWithStep from "./Question-5";
 import Clock from "./Question-6";
 import Notification from "./Question-7";
 
-export {
-  Counter,
-  PersonForm,
-  ToDoList,
-  RandomNumberGenerator,
-  CounterWithStep,
-  Clock,
-  Notification,
+const Question2 = () => {
+  return (
+    <>
+      <Counter />
+      <hr />
+      <PersonForm />
+      <hr />
+      <ToDoList />
+      <hr />
+      <RandomNumberGenerator />
+      <hr />
+      <CounterWithStep />
+      <hr />
+      <Clock />
+      <hr />
+      <Notification />
+      <br />
+      <br />
+      <br />
+      <br />
+      <hr />
+    </>
+  );
 };
+export default Question2;
