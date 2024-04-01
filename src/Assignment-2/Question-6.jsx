@@ -9,21 +9,11 @@ When the component unmounts, clear the interval to stop updating the time.
 import { useEffect, useState } from "react";
 
 const Clock = () => {
-  const [time, setTime] = useState("");
-  let date = new Date();
+  const [time, setTime] = useState(new Date().toLocaleString());
+
   useEffect(() => {
-    setInterval(
-      () =>
-        setTime(
-          date.getHours() +
-            " : " +
-            date.getMinutes() +
-            " : " +
-            date.getSeconds()
-        ),
-      1000
-    );
-  });
+    setInterval(() => setTime(new Date().toLocaleString()), 1000);
+  }, [time]);
   return (
     <>
       <p>{time}</p>

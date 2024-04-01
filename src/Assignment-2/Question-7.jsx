@@ -6,29 +6,41 @@ Use the useEffect hook to show a notification message for 5 seconds whenever the
 Render the notification message in a <div> element.
 After 5 seconds, clear the message to hide the notification.
  */
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
+
+const useDebounceValue = (inputValue, delay) => {
+  const [debouncedValue, setDebouncedValue] = useState(inputValue);
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(inputValue);
+    }, delay);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [inputValue, delay]);
+  return debouncedValue;
+};
 
 const Notification = () => {
-  let hasPageBeenRendered = useRef(false);
-  let [message, setMessage] = useState("");
-  let renderedEle;
+  const [message, setMessage] = useState("");
+  const [show, setShow] = useState(false);
+  const debounceSearchTerm = useDebounceValue(message, 1000);
+
   useEffect(() => {
-    if (hasPageBeenRendered.current) {
-      setTimeout(() => {
-        console.log(message);
-      }, 5000);
-      hasPageBeenRendered.current = true;
-    }
-  }, [message]);
+    setTimeout(() => setShow(false), 5000);
+    setShow(true);
+  }, [debounceSearchTerm]);
 
   return (
     <>
       <input
+        onChange={(e) => setMessage(e.target.value)}
         type="text"
         value={message}
-        onChange={(e) => setMessage(e.target.value)}
-      ></input>
-      {renderedEle === undefined ? <></> : renderedEle}
+      />
+
+      {show === true ? <div>{message}</div> : <></>}
     </>
   );
 };
