@@ -16,3 +16,17 @@ code {
   background-color: aliceblue;
   padding: 10px;
 }
+
+button {
+  padding: 10px;
+  margin: 10px;
+  background-color: aliceblue;
+  border-radius: 10px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+input {
+  padding: 10px;
+  margin: 10px;
+  font-family: "Courier New", Courier, monospace;
+}
