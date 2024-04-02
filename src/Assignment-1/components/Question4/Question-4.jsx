@@ -22,7 +22,7 @@ const Counter = () => {
         {counter < 20 ? (
           <button
             onClick={() => {
-              setCounter(counter++);
+              setCounter(++counter);
             }}
           >
             Increment
