@@ -54,11 +54,34 @@ const Cart = () => {
                 margin: "0px",
               }}
               onClick={() => {
-                cart.map((cartItems) => {
-                  return cartItems.itemName !== ele.itemName
-                    ? setcart([...cart, { ...ele, quantity: 1 }])
-                    : (cartItems.quantity = cartItems.quantity + 1);
-                });
+                let newObj = cart.find(
+                  (cartItems) => ele.itemName === cartItems.itemName
+                );
+
+                if (newObj === undefined) {
+                  setcart([
+                    ...cart,
+                    {
+                      ...ele,
+                      quantity: 1,
+                      key: new Date().toLocaleString(),
+                    },
+                  ]);
+                } else if (newObj !== undefined) {
+                  let prevQuantity = newObj.quantity;
+
+                  const newCart = cart.filter((element) => {
+                    return element.itemName !== newObj.itemName;
+                  });
+                  setcart([
+                    ...newCart,
+                    {
+                      ...ele,
+                      quantity: prevQuantity + 1,
+                      key: new Date().toLocaleString(),
+                    },
+                  ]);
+                }
               }}
             >
               Add Item

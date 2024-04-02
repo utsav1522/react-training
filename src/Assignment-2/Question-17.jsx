@@ -7,7 +7,6 @@ Return a success status and methods to trigger the copying action.
 Develop a component that uses the useClipboard hook to provide a copy button for text.
  */
 
-import { useEffect, useState } from "react";
 import useClipboard from "./Question-17-helper";
 
 const Clipboard = ({ text }) => {

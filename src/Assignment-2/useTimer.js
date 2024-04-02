@@ -1,28 +1,31 @@
-import { useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
-// Return the current timer value and methods to start, pause, and reset the timer
-const useTimer = () => {
-  const [time, setTime] = useState();
-  let timerRef = useRef();
+const useTimer = (initialTime) => {
+  const [time, setTime] = useState(initialTime);
+  const [isRunning, setIsRunning] = useState(false);
+  useEffect(() => {
+    let d;
+    if (!isRunning || time < 0) {
+      clearInterval(d);
+    } else {
+      d = setInterval(() => {
+        setTime((prev) => prev - 1);
+      }, 1000);
+    }
+    return () => clearInterval(d);
+  }, [time, isRunning]);
 
-  const startTimer = (timeValue) => {
-    setTime(timeValue);
-    timerRef = setInterval(() => {
-      setTime(Number(time) - 1);
-    }, 1000);
+  const startTimer = () => {
+    setIsRunning(true);
   };
-
   const pauseTimer = () => {
-    timerRef = setInterval(() => {
-      setTime(time);
-      return () => clearInterval(timerRef);
-    }, 1000);
+    setIsRunning(false);
   };
-
-  const stopTimer = () => {
-    setTime();
-    return () => clearInterval(timerRef);
+  const resetTimer = () => {
+    setIsRunning(false);
+    setTime(initialTime);
   };
-  return { startTimer, pauseTimer, stopTimer };
+  return { time, setTime, isRunning, startTimer, pauseTimer, resetTimer };
 };
+
 export default useTimer;

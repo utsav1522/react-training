@@ -5,20 +5,22 @@ Use setInterval to decrement the timer at regular intervals.
 Return the current timer value and methods to start, pause, and reset the timer.
 Develop a component that utilizes the useTimer hook to display and control a countdown.
  */
-import { useState } from "react";
 import useTimer from "./useTimer";
 
 const Timer = () => {
-  const [time, setTime] = useState();
-  const { startTimer, pauseTimer, stopTimer } = useTimer();
+  const { time, setTime, isRunning, startTimer, pauseTimer, resetTimer } =
+    useTimer(100);
 
   return (
     <>
-      <input value={time} onChange={(e) => setTime(e.target.value)} />
-      <h4>Timer Value: {time}</h4>
-      <button onClick={() => startTimer(time)}>Start Timer</button>
-      <button onClick={() => pauseTimer}>Pause Timer</button>
-      <button onClick={() => stopTimer}>Stop Timer</button>
+      <p>Timer: {time} seconds</p>
+      <button onClick={startTimer} disabled={isRunning}>
+        Start
+      </button>
+      <button onClick={pauseTimer} disabled={!isRunning}>
+        Pause
+      </button>
+      <button onClick={resetTimer}>Reset</button>
     </>
   );
 };

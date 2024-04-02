@@ -16,14 +16,19 @@ export const CartContext = React.createContext();
 
 const ShoppingCart = () => {
   const [cart, setCart] = useState([
-    { itemName: "Item1", price: 100, quantity: 1 },
+    {
+      itemName: "Item1",
+      price: 100,
+      quantity: 1,
+      key: new Date().toLocaleString(),
+    },
   ]);
   return (
     <>
       <CartContext.Provider value={{ cart: cart, setcart: setCart }}>
         <Cart />
       </CartContext.Provider>
-
+      <h4>Cart Items</h4>
       <ul>
         {cart.length > 0 ? (
           cart.map((ele) => {
@@ -32,6 +37,32 @@ const ShoppingCart = () => {
                 <h4>ItemName: {ele.itemName}</h4>
                 <p>Price: {ele.price}</p>
                 <p>Quantity: {ele.quantity}</p>
+                <button
+                  onClick={() => {
+                    if (ele.quantity > 0) {
+                      let prevQuantity = ele.quantity;
+                      const newCart = cart.filter((element) => {
+                        return element.itemName !== ele.itemName;
+                      });
+                      setCart([
+                        ...newCart,
+                        {
+                          ...ele,
+                          quantity: prevQuantity - 1,
+                          key: new Date().toLocaleString(),
+                        },
+                      ]);
+                    }
+                    if (Number(ele.quantity) === 1) {
+                      const newCart = cart.filter((element) => {
+                        return element.itemName !== ele.itemName;
+                      });
+                      setCart(newCart);
+                    }
+                  }}
+                >
+                  Remove Item
+                </button>
               </li>
             );
           })

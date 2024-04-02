@@ -49,7 +49,6 @@ const Assignment2 = () => {
       <hr />
       <Parent />
       <hr />
-
       <Tasks />
       <hr />
       <StudentsList />
