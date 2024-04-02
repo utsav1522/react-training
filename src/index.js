@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import Assignment3 from "./Assignment-3";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
-    <h1></h1>
+    <Assignment3 />
   </>
 );
