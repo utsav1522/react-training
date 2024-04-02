@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(50, 50, 50);
+  color: white;
 }
 
 code {
@@ -29,4 +31,51 @@ input {
   padding: 10px;
   margin: 10px;
   font-family: "Courier New", Courier, monospace;
+}
+.greetings {
+  width: fit-content;
+  justify-content: center;
+  height: fit-content;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.userCard {
+  align-items: center;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+.userCardImg {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  /* margin-left: auto; */
+  /* margin-right: 10px; */
+  border-radius: 50%;
+  margin-left: 20px;
+}
+
+.buttonQuestion4 {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buttonQuestion4 > button {
+  padding: 10px;
+}
+
+.Question5listItem {
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100;
+  color: white;
 }
