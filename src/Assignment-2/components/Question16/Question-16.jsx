@@ -44,9 +44,9 @@ const EmployeeSalary = () => {
   return (
     <>
       <ul>
-        {employee.map((ele) => {
+        {employee.map((ele, index) => {
           return (
-            <li>
+            <li key={index + 102030}>
               Name: {ele.name} || Salary: {ele.salary}
             </li>
           );

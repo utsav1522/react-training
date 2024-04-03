@@ -5,14 +5,11 @@ const useClipboard = (initalValue) => {
   const reset = () => {
     setInput(initalValue);
   };
-  const bind = {
-    input,
-    onchange: (e) => {
-      window.navigator.clipboard.writeText(input);
-      setInput(e.target.value);
-    },
+  const copyText = () => {
+    window.navigator.clipboard.writeText(input);
   };
-  return [input, bind, reset];
+
+  return [input, setInput, copyText, reset];
 };
 
 export default useClipboard;

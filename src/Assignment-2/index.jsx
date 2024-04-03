@@ -23,6 +23,7 @@ import Timer from "./components/Question19";
 const Assignment2 = () => {
   return (
     <>
+      <h1 style={{ padding: "10px" }}>Assignment - 2</h1>
       <Counter />
       <hr />
       <PersonForm />

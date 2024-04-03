@@ -31,9 +31,9 @@ const ShoppingCart = () => {
       <h4>Cart Items</h4>
       <ul>
         {cart.length > 0 ? (
-          cart.map((ele) => {
+          cart.map((ele, index) => {
             return (
-              <li>
+              <li key={index + 5678}>
                 <h4>ItemName: {ele.itemName}</h4>
                 <p>Price: {ele.price}</p>
                 <p>Quantity: {ele.quantity}</p>
@@ -49,7 +49,7 @@ const ShoppingCart = () => {
                         {
                           ...ele,
                           quantity: prevQuantity - 1,
-                          key: new Date().toLocaleString(),
+                          key: index + 1000,
                         },
                       ]);
                     }

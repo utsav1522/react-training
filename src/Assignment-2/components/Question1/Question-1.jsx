@@ -20,7 +20,7 @@ const Counter = () => {
       <div className="buttonQuestion4">
         <h4
           style={{
-            color: "black",
+            color: "white",
             marginRight: "auto",
             alignContent: "center",
           }}

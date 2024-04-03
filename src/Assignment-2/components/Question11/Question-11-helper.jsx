@@ -33,12 +33,14 @@ const Cart = () => {
         display: "flex",
       }}
     >
-      {itemsList.map((ele) => {
+      {itemsList.map((ele, index) => {
         return (
           <div
+            key={index + 98765}
             style={{
               backgroundColor: "aliceblue",
               margin: "20px",
+              color: "black",
               alignItems: "center",
               marginLeft: "auto",
               marginRight: "auto",
@@ -64,7 +66,7 @@ const Cart = () => {
                     {
                       ...ele,
                       quantity: 1,
-                      key: new Date().toLocaleString(),
+                      key: index + 102090,
                     },
                   ]);
                 } else if (newObj !== undefined) {
@@ -78,7 +80,7 @@ const Cart = () => {
                     {
                       ...ele,
                       quantity: prevQuantity + 1,
-                      key: new Date().toLocaleString(),
+                      key: index + 10010,
                     },
                   ]);
                 }

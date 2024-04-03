@@ -10,16 +10,20 @@ Develop a component that uses the useClipboard hook to provide a copy button for
 import useClipboard from "./Question-17-helper";
 
 const Clipboard = ({ text }) => {
-  const [input, bindInput, resetInput] = useClipboard("");
+  const [input, setInput, copyText, resetInput] = useClipboard("");
 
   return (
     <>
       <input
         id="inputFeild"
-        {...bindInput}
+        value={input}
+        onChange={(e) => {
+          setInput(e.target.value);
+        }}
       />
       <button
         onClick={() => {
+          if (input.length > 0) {copyText();}
           resetInput();
         }}
       >
