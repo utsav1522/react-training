@@ -15,6 +15,11 @@ import About from "./About";
 import Error from "./Error";
 import UnauthenticatedPage from "./UnauthenticatedPage";
 import { createContext, useState } from "react";
+import Dashboard from "./Dashboard/Dashboard";
+import Profile from "./Profile/Profile";
+import Settings from "./Settings/Settings";
+import Innovations from "./Innovations/Innovations";
+import QuickLinks from "./QuickLinks/QuickLinks";
 export const LoginContext = createContext();
 const IndexPage = () => {
   const [isLoggedin, setIsLoggedIn] = useState(false);
@@ -26,7 +31,15 @@ const IndexPage = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           {isLoggedin === true ? (
-            <Route path="/about" element={<About />} />
+            <>
+              <Route path="about" element={<About />} />
+              <Route path="dashboard" element={<Dashboard />}>
+                <Route path="profile" element={<Profile />} />
+                <Route path="settings" element={<Settings />} />
+                <Route path="innovations" element={<Innovations />} />
+                <Route path="quick-links" element={<QuickLinks />} />
+              </Route>
+            </>
           ) : (
             <></>
           )}
