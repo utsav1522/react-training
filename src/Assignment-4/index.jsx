@@ -1,4 +1,5 @@
 import Question1 from "./components/Question-1";
+import FormComponenet from "./components/Question-10/FormComponent";
 import Form from "./components/Question-2";
 import Question3 from "./components/Question-3";
 import IndexPage from "./components/Question-4";
@@ -10,7 +11,13 @@ import MiniDrawer from "./components/Question-9";
 
 const Assignment4 = () => {
   return (
-    <>
+    <div
+      style={{
+        color: "black",
+        marginTop: "80px",
+        marginLeft: "80px",
+      }}
+    >
       <h1
         style={{
           padding: "10px",
@@ -35,7 +42,10 @@ const Assignment4 = () => {
       <TempConverter />
       <hr />
       <MiniDrawer />
-    </>
+      <hr />
+      <FormComponenet />
+      <hr />
+    </div>
   );
 };
 
