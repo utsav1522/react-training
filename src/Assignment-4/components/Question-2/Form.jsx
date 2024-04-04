@@ -30,6 +30,8 @@ const Form = () => {
   };
   return (
     <>
+      <h1>Question - 2 Form</h1>
+
       <table>
         <tr>
           <td>

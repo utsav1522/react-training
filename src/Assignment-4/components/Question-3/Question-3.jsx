@@ -11,7 +11,8 @@ const Question3 = () => {
   const [input, setInput] = useState("");
   return (
     <>
-    <label>Enter the code to display the passcode: </label>
+      <h1>Show a div on a particular text</h1>
+      <label>Enter the code to display the passcode: </label>
       <input
         type="text"
         value={input}

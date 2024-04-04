@@ -11,6 +11,7 @@ const Question1 = () => {
   const [input, setInput] = useState("");
   return (
     <>
+      <h1>Question - 1</h1>
       <label
         style={{
           margin: "10px",
