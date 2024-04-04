@@ -10,23 +10,31 @@ Display the entered information below the input fields.
 import { useState } from "react";
 
 const PersonForm = () => {
-  let [firstName, setFirstName] = useState("");
-  let [lastName, setLastName] = useState("");
-  let [age, setAge] = useState();
+  const [name, setName] = useState({
+    firstName: "",
+    lastName: "",
+    age: 0,
+  });
 
   return (
     <>
       <input
         type="text"
-        value={firstName}
-        onChange={(e) => setFirstName(e.target.value)}
+        value={name.firstName}
+        onChange={(e) => {
+          const updateValue = { firstName: e.target.value };
+          setName({ ...name, ...updateValue });
+        }}
         placeholder="First Name...."
       ></input>
       <br></br>
       <input
         type="text"
-        value={lastName}
-        onChange={(e) => setLastName(e.target.value)}
+        value={name.lastName}
+        onChange={(e) => {
+          const updateValue = { lastName: e.target.value };
+          setName({ ...name, ...updateValue });
+        }}
         placeholder="Last Name...."
       ></input>
       <br></br>
@@ -34,15 +42,18 @@ const PersonForm = () => {
         type="number"
         min={1}
         max={100}
-        value={age}
-        onChange={(e) => setAge(Number(e.target.value))}
+        value={name.age}
+        onChange={(e) => {
+          const updateValue = { age: Number(e.target.value) };
+          setName({ ...name, ...updateValue });
+        }}
         placeholder="Age...."
       ></input>
       <br></br>
       <h4>
-        Name is: {firstName} {lastName}
+        Name is: {name.firstName} {name.lastName}
       </h4>
-      <h4>Age is {age}</h4>
+      <h4>Age is: {name.age}</h4>
     </>
   );
 };

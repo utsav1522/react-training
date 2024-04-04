@@ -10,21 +10,47 @@ Add an input field where the user can specify a step value.
 import { useState } from "react";
 
 const CounterWithStep = () => {
-  const [counter, setCounter] = useState(0);
-  const [steps, setSteps] = useState(1);
+  const [counterAndSteps, setCounterAndSteps] = useState({
+    counter: 0,
+    steps: 1,
+  });
+
   return (
     <>
-      <p>{counter}</p>
+      <p>{counterAndSteps.counter}</p>
       <input
         type="number"
-        onChange={(e) => setSteps(e.target.value)}
+        value={counterAndSteps.steps}
+        onChange={(e) => {
+          const updateValue = { steps: e.target.value };
+          setCounterAndSteps({ ...counterAndSteps, ...updateValue });
+          // setSteps(e.target.value)
+        }}
         placeholder="Steps"
       />
-      <button onClick={() => setCounter(counter + Number(steps))}>
+      <button
+        onClick={() => {
+          const updateValue = {
+            counter:
+              Number(counterAndSteps.counter) + Number(counterAndSteps.steps),
+          };
+          setCounterAndSteps({ ...counterAndSteps, ...updateValue });
+        }}
+      >
         Increment
       </button>
-      {counter > steps ? (
-        <button onClick={() => setCounter(counter - steps)}>Decrement</button>
+      {counterAndSteps.counters > counterAndSteps.steps ? (
+        <button
+          onClick={() => {
+            const updateValue = {
+              counter:
+                Number(counterAndSteps.counter) - Number(counterAndSteps.steps),
+            };
+            setCounterAndSteps({...counterAndSteps, ...updateValue});
+          }}
+        >
+          Decrement
+        </button>
       ) : (
         <></>
       )}
