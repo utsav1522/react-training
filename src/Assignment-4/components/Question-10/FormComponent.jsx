@@ -1,4 +1,5 @@
 import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 import { useState } from "react";
 const FormComponenet = () => {
   const [user, setUser] = useState({
@@ -13,6 +14,9 @@ const FormComponenet = () => {
         style={{
           marginRight: "10px",
         }}
+        helperText="Enter the First Name"
+        errorText="Enter the First Name"
+        required
         label="First Name"
         variant="outlined"
         value={user.firstName}
@@ -22,6 +26,7 @@ const FormComponenet = () => {
         }}
       />
       <TextField
+        helperText="Enter the Last Name"
         label="Last Name"
         variant="outlined"
         value={user.lastName}
@@ -35,6 +40,7 @@ const FormComponenet = () => {
         style={{
           marginTop: "10px",
         }}
+        helperText="Enter the username"
         label="Username"
         variant="outlined"
         value={user.username}
@@ -49,6 +55,7 @@ const FormComponenet = () => {
           marginTop: "10px",
           marginLeft: "10px",
         }}
+        helperText="Enter the password"
         label="Password"
         variant="outlined"
         value={user.password}
@@ -57,6 +64,9 @@ const FormComponenet = () => {
           setUser({ ...user, ...updateValue });
         }}
       />
+      <br />
+      <br />
+      <Button variant="outlined">Sign Up</Button>
     </>
   );
 };
