@@ -1,2 +1,2 @@
-import MiniDrawer from "./SideBar";
-export default MiniDrawer;
+import IndexPageQuestion9 from "./indexPage";
+export default IndexPageQuestion9;

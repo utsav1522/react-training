@@ -1,11 +1,12 @@
-import React from 'react'
-
+import React from "react";
+import DrawerComponent from "./DrawerComponenet";
 function Home() {
   return (
     <div>
-        Home
+      <DrawerComponent />
+      Welcome to Home Page
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
