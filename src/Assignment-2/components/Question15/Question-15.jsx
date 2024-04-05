@@ -7,7 +7,12 @@ Include a button that, when clicked, appends a new student name to the list.*/
 import React, { useMemo, useState } from "react";
 
 const StudentList = () => {
-  const [studentName, setStudentName] = useState(["NAME 1", "NAME 2", "NAME 3", "NAME 4"]);
+  const [studentName, setStudentName] = useState([
+    "NAME 1",
+    "NAME 2",
+    "NAME 3",
+    "NAME 4",
+  ]);
 
   const [data, setData] = useState("");
 
@@ -32,7 +37,11 @@ const StudentList = () => {
         }}
         value={data}
       />
-      <button onClick={() => addStudent()}>Add Student</button>
+      {data !== "" ? (
+        <button onClick={() => addStudent()}>Add Student</button>
+      ) : (
+        <></>
+      )}
     </>
   );
 };

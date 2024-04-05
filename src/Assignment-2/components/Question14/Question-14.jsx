@@ -29,17 +29,21 @@ const Tasks = () => {
   return (
     <>
       <input value={input} onChange={(e) => setInput(e.target.value)} />
-      <button
-        onClick={() => {
-          setTasksList([
-            ...tasksList,
-            { id: new Date().toLocaleString(), task: input },
-          ]);
-          setInput("");
-        }}
-      >
-        Add Task to List
-      </button>
+      {input !== "" ? (
+        <button
+          onClick={() => {
+            setTasksList([
+              ...tasksList,
+              { id: new Date().toLocaleString(), task: input },
+            ]);
+            setInput("");
+          }}
+        >
+          Add Task to List
+        </button>
+      ) : (
+        <></>
+      )}
 
       {tasksList.length > 0 ? (
         tasksList.map((ele) => {

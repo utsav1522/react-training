@@ -22,8 +22,12 @@ const PersonForm = () => {
         type="text"
         value={name.firstName}
         onChange={(e) => {
-          const updateValue = { firstName: e.target.value };
-          setName({ ...name, ...updateValue });
+          const value = e.target.value;
+          const re = /^[A-Za-z]+$/;
+          if (value === "" || re.test(value)) {
+            const updateValue = { firstName: value };
+            setName({ ...name, ...updateValue });
+          }
         }}
         placeholder="First Name...."
       ></input>
@@ -32,8 +36,12 @@ const PersonForm = () => {
         type="text"
         value={name.lastName}
         onChange={(e) => {
-          const updateValue = { lastName: e.target.value };
-          setName({ ...name, ...updateValue });
+          const value = e.target.value;
+          const re = /^[A-Za-z]+$/;
+          if (value === "" || re.test(value)) {
+            const updateValue = { lastName: value };
+            setName({ ...name, ...updateValue });
+          }
         }}
         placeholder="Last Name...."
       ></input>
@@ -44,8 +52,10 @@ const PersonForm = () => {
         max={100}
         value={name.age}
         onChange={(e) => {
-          const updateValue = { age: Number(e.target.value) };
-          setName({ ...name, ...updateValue });
+          if (Number(e.target.value) > 0 && Number(e.target.value) < 100) {
+            const updateValue = { age: Number(e.target.value) };
+            setName({ ...name, ...updateValue });
+          }
         }}
         placeholder="Age...."
       ></input>

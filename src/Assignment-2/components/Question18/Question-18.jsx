@@ -51,12 +51,14 @@ const LocalStorageAccess = () => {
           setGetKey("");
         }}
       >
-        Get Value to Local Storage:
+        Get Value from Local Storage:
       </button>
-      {values !== "" ? (
+      {values !== "" && values !== undefined ? (
         <div>
           <p>The returned value is : {values}</p>
         </div>
+      ) : values === undefined ? (
+        <p>No Such key found</p>
       ) : (
         <></>
       )}

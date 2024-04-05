@@ -12,7 +12,7 @@ import { useState } from "react";
 
 const ToDoList = () => {
   const [todos, setTodos] = useState([]);
-  let [input, setInput] = useState();
+  let [input, setInput] = useState("");
 
   const deleteItems = (key) => {
     const newarray = todos.filter((ele) => {
