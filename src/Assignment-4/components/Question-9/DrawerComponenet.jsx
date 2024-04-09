@@ -41,7 +41,7 @@ const DrawerComponent = () => {
           <Button
             variant="outlined"
             onClick={() => {
-              navigate("/contact");
+              navigate("/assignment-4/question-9/contact");
             }}
           >
             Go to Contacts
@@ -51,7 +51,7 @@ const DrawerComponent = () => {
           <Button
             variant="outlined"
             onClick={() => {
-              navigate("/innovations");
+              navigate("/assignment-4/question-9/innovations");
             }}
           >
             Go to Innovations
@@ -61,7 +61,7 @@ const DrawerComponent = () => {
           <Button
             variant="outlined"
             onClick={() => {
-              navigate("/settings");
+              navigate("/assignment-4/question-9/settings");
             }}
           >
             Go to Settings

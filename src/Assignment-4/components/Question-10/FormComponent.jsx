@@ -6,7 +6,6 @@
 
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import { Modal } from "@mui/material";
 import { useState } from "react";
 const FormComponenet = () => {
   const [user, setUser] = useState({
@@ -56,8 +55,24 @@ const FormComponenet = () => {
   };
 
   return (
-    <>
-      <form>
+    <div
+      style={{
+        marginLeft: "20px",
+        height: "100vh",
+        width: "100vw",
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "white",
+      }}
+    >
+      <form
+        style={{
+          marginLeft: "30px",
+          marginTop: "30px",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
         <TextField
           style={{
             marginRight: "10px",
@@ -141,17 +156,21 @@ const FormComponenet = () => {
         </Button>
       </form>
       {submitStatus === true ? (
-        <>
+        <div
+          style={{
+            color: "black",
+          }}
+        >
           <h1>Form Details</h1>
           <p>
             Name: {user.firstName} {user.lastName}
           </p>
           <p>Username: {user.username}</p>
-        </>
+        </div>
       ) : (
         <></>
       )}
-    </>
+    </div>
   );
 };
 

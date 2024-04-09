@@ -79,3 +79,14 @@ button {
   font-family: "Courier New", Courier, monospace;
   border-radius: 10px;
 }
+
+.nav {
+  display: flex;
+  width: 100vw;
+  padding: 10px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  color: white;
+}

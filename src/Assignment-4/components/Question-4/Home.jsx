@@ -7,13 +7,13 @@
  */
 
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 const Home = () => {
   return (
     <div>
       <h1>Question 4 - Registeration Form</h1>
       <h1> You are on Home Page</h1>
-      <Link to="/sign-up">Sign-up</Link>
+      <Link to="sign-up"> Sign-up </Link>
     </div>
   );
 };

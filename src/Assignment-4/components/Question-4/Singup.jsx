@@ -21,7 +21,7 @@ const SignUp = () => {
       password === "asdfghjkl" &&
       confirmPassword === "asdfghjkl"
     ) {
-      navigate("/dashboard");
+      navigate("/assignment-4/question-4/dashboard");
     }
   };
   return (
