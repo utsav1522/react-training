@@ -29,8 +29,9 @@ const IndexPage = () => {
     >
       <BrowserRouter>
         <Routes>
+          localStorage.setItem("isAuthneticated", isLoggedin)
           <Route path="/" element={<Home />} />
-          {isLoggedin === true ? (
+          {localStorage.getItem("isAuthneticated") === "true" ? (
             <>
               <Route path="about" element={<About />} />
               <Route path="dashboard" element={<Dashboard />}>

@@ -9,7 +9,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
     <Assignment3 />
-    <Assignment2 />
-    <Assignment1 />
+    {/* <Assignment2 />
+    <Assignment1 /> */}
   </>
 );

@@ -10,9 +10,11 @@ function Home() {
 
   const authenticate = (username, password) => {
     if (username === "utsav7011" && password === "asdfghjkl") {
+      localStorage.setItem("isAuthneticated", "true");
       setLoginStatus(true);
       navigate("/about");
     } else {
+      localStorage.setItem("isAuthneticated", "false");
       navigate("/login-failed");
     }
   };

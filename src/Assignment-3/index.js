@@ -6,8 +6,8 @@ const Assignment3 = () => {
   return (
     <>
       {/* <Parent /> */}
-      {/* <IndexPage /> */}
-      <ListParent />
+      <IndexPage />
+      {/* <ListParent /> */}
     </>
   );
 };
