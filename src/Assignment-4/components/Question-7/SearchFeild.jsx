@@ -26,7 +26,8 @@ const SearchFeild = () => {
 
   useEffect(() => {
     const newList = itemsList.filter((ele) => {
-      return ele.includes(searchInput);
+      let newEle = ele.toLowerCase();
+      return newEle.includes(searchInput.toLowerCase());
     });
     setSearchRes(newList);
   }, [searchInput]);

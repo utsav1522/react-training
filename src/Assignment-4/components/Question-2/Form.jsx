@@ -47,7 +47,9 @@ const Form = () => {
                   : console.log(e.target.value);
               }}
               onChange={(e) => {
-                setName(e.target.value);
+                let value = e.target.value;
+                value = value.replace(/[^A-Za-z]/gi, "");
+                setName(value);
               }}
             />
           </td>

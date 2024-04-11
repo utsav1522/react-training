@@ -116,7 +116,6 @@ const FormComponenet = () => {
           required
           helperText={"Enter the username"}
           label="Username"
-          error={!user.username}
           variant="outlined"
           value={user.username}
           onChange={(e) => {
@@ -134,7 +133,7 @@ const FormComponenet = () => {
           helperText="Enter the password"
           label="Password"
           type="password"
-          error={checkPassword()}
+          error={user.password !== "" && checkPassword()}
           variant="outlined"
           value={user.password}
           onChange={(e) => {
