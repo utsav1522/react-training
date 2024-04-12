@@ -72,19 +72,6 @@ input {
   padding: 10px;
 }
 
-.Question5listItem {
-  padding: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100;
-  color: white;
-}
-
-label {
-  padding: 10px;
-  margin: 10px;
-}
-
 input {
   padding: 10px;
   margin: 10px;
@@ -94,17 +81,14 @@ input {
 button {
   padding: 10px;
   margin: 10px;
-  font-family: "Courier New", Courier, monospace;
   border-radius: 10px;
+  background-color: aliceblue;
 }
-
-.nav {
-  display: flex;
-  width: 100vw;
+.Question5listItem {
   padding: 10px;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100;
   color: white;
 }
+
