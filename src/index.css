@@ -72,6 +72,18 @@ input {
   padding: 10px;
 }
 
+input {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+button {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: aliceblue;
+}
 .Question5listItem {
   padding: 10px;
   margin-left: auto;
@@ -79,3 +91,5 @@ input {
   width: 100;
   color: white;
 }
+
+
