@@ -1,13 +1,13 @@
-import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
-import Greeting from "./components/Question1";
-import UserCard from "./components/Question2";
-import Weather from "./components/Question3";
-import Counter from "./components/Question4";
-import TaskList from "./components/Question5";
-import Button from "./components/Question6";
-import { data, tasks } from "./mock.js";
+import React, { lazy } from "react";
 import "./index.css";
+import { Routes, Route, Link } from "react-router-dom";
+import { data, tasks } from "./mock.js";
+const Greeting = lazy(() => import("./components/Question1"));
+const UserCard = lazy(() => import("./components/Question2"));
+const Weather = lazy(() => import("./components/Question3"));
+const TaskList = lazy(() => import("./components/Question5"));
+const Counter = lazy(() => import("./components/Question4"));
+const Button = lazy(() => import("./components/Question6"));
 const AssignmentOneRouter = () => {
   return (
     <div>
