@@ -62,7 +62,7 @@ const FetchDataFour = () => {
               alignContent: "right",
             }}
           >
-            {range.min > 10 ? (
+            {range.min >= 10 ? (
               <button
                 style={{
                   padding: "10px",

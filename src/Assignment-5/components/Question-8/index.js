@@ -1,33 +1,29 @@
-import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
-import { gql } from "@apollo/client";
+import {
+  ApolloProvider,
+  ApolloClient,
+  InMemoryCache,
+  createHttpLink,
+} from "@apollo/client";
 import React from "react";
 
 import FetchDataEight from "./FetchDataEight";
-import DisplayLocations from "./Temp";
+
+// const headers = createHttpLink({
+//   uri: "https://rapidapi.com/wirefreethought/api/geodb-cities-graphql",
+//   headers: {
+//     "x-rapidapi-key": "e506a53a8fmsh590af1fe09ad06fp168bd2jsne105e9ecd714",
+//     "x-rapidapi-host": "geodb-cities-graphql.p.rapidapi.com",
+//     "Content-Type": "application/json",
+//   },
+// });
 
 const client = new ApolloClient({
-  // uri: "https://geodb-cities-graphql.p.rapidapi.com/",
-  // uri: "http://localhost:4000",
-  uri: "https://flyby-router-demo.herokuapp.com/",
+  // link: headers,
+  uri: "http://localhost:4000/",
   cache: new InMemoryCache(),
 });
 
-// client
-//   .query({
-//     query: gql`
-//       query GetLocations {
-//         locations {
-//           id
-//           name
-//           description
-//           photo
-//         }
-//       }
-//     `,
-//   })
-//   .then((result) => console.log(result));
-
-function IndxQuestionSix() {
+function IndxQuestionEight() {
   return (
     <ApolloProvider client={client}>
       <FetchDataEight />
@@ -35,4 +31,4 @@ function IndxQuestionSix() {
   );
 }
 
-export default IndxQuestionSix;
+export default IndxQuestionEight;

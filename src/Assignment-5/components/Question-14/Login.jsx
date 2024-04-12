@@ -1,16 +1,22 @@
-import { useState, useHistory } from "react";
-import withAuth from "./withAuth";
+import React, { useState } from "react";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
+  const handleLogin = () => {
+    if (name === "utsav7011" && password === "asdfghjkl") {
+      localStorage.setItem("login", "true");
+    }
+  };
+
   return (
-    <>
+    <div>
       <input
-        value={email}
+        type="text"
+        value={name}
         onChange={(e) => {
-          setEmail(e.target.value);
+          setName(e.target.value);
         }}
       />
       <input
@@ -20,10 +26,9 @@ const Login = () => {
           setPassword(e.target.value);
         }}
       />
-      <button>Login</button>
-    </>
+      <button onClick={handleLogin}>Login</button>
+    </div>
   );
 };
-// JSX
 
-export default withAuth(Login);
+export default Login;

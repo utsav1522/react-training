@@ -1,9 +1,8 @@
 import React from "react";
-import { gql } from "@apollo/client";
-import { useQuery } from "@apollo/client";
+import { gql, useQuery } from "@apollo/client";
 
 const BOOKS = gql`
-  query getTracks {
+  query getBooks {
     getBooks {
       id
       name
@@ -18,18 +17,27 @@ const BOOKS = gql`
   }
 `;
 
-const FetchDataEight = () => {
-  console.log("console");
+const FetchDataEleven = () => {
   const { loading, error, data } = useQuery(BOOKS);
-  console.log(error, "error");
-  console.log(loading, "Loading");
-  console.log(data);
-
+  if (loading)
+    return (
+      <>
+        <h1>Loading...</h1>
+      </>
+    );
+  if (error) {
+    console.log(error);
+    return (
+      <>
+        <h1>{error}</h1>
+      </>
+    );
+  }
   return (
-    <>
+    <div>
+      <h1>Question-10</h1>
       <ul>
-        <h1>Question - 8</h1>
-        {data?.getBooks.map((ele, index) => {
+        {data?.getBooks?.map((ele, index) => {
           return (
             <>
               <p>============== Book {index + 1} ==============</p>
@@ -48,8 +56,8 @@ const FetchDataEight = () => {
           );
         })}
       </ul>
-    </>
+    </div>
   );
 };
 
-export default FetchDataEight;
+export default FetchDataEleven;
