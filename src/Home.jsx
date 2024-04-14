@@ -7,7 +7,7 @@ const Home = () => {
         style={{
           display: "flex",
           flexDirection: "row",
-          justifyContent: "space-around",
+          justifyContent: "space-evenly",
           alignItems: "center",
         }}
       >
@@ -22,7 +22,7 @@ const Home = () => {
         >
           Go to Assignment - 1
         </Link>
-        <br />
+
         <Link
           to="/assignment-2"
           style={{
@@ -34,7 +34,7 @@ const Home = () => {
         >
           Go to Assignment - 2
         </Link>
-        <br />
+
         <Link
           to="/assignment-3"
           style={{
@@ -46,7 +46,7 @@ const Home = () => {
         >
           Go to Assignment - 3
         </Link>
-        <br />
+
         <Link
           to="/assignment-4"
           style={{
@@ -57,6 +57,30 @@ const Home = () => {
           }}
         >
           Go to Assignment - 4
+        </Link>
+
+        <Link
+          to="/assignment-5"
+          style={{
+            color: "white",
+            textDecoration: "none",
+            backgroundColor: "green",
+            padding: "10px",
+          }}
+        >
+          Go to Assignment - 5
+        </Link>
+
+        <Link
+          to="/assignment-6"
+          style={{
+            color: "white",
+            textDecoration: "none",
+            backgroundColor: "green",
+            padding: "10px",
+          }}
+        >
+          Go to Assignment - 6
         </Link>
       </div>
     </>
