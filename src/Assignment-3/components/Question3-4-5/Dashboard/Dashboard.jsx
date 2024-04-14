@@ -15,7 +15,6 @@ function Dashboard() {
         <div
           style={{
             display: "flex",
-
             padding: "10px",
             justifyContent: "space-around",
           }}
@@ -26,7 +25,7 @@ function Dashboard() {
               marginRight: "10px",
               textDecoration: "none",
             }}
-            to="/dashboard/profile"
+            to="profile"
           >
             Profile Section
           </Link>
@@ -37,7 +36,7 @@ function Dashboard() {
               marginRight: "10px",
               textDecoration: "none",
             }}
-            to="/dashboard/settings"
+            to="settings"
           >
             Settings Section
           </Link>
@@ -47,7 +46,7 @@ function Dashboard() {
               marginRight: "10px",
               textDecoration: "none",
             }}
-            to="/dashboard/innovations"
+            to="innovations"
           >
             Innovations Section
           </Link>
@@ -58,7 +57,7 @@ function Dashboard() {
               marginRight: "10px",
               textDecoration: "none",
             }}
-            to="/dashboard/quick-links"
+            to="quick-links"
           >
             Quick Links
           </Link>

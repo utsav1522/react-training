@@ -12,10 +12,10 @@ function Home() {
     if (username === "utsav7011" && password === "asdfghjkl") {
       localStorage.setItem("isAuthneticated", "true");
       setLoginStatus(true);
-      navigate("/about");
+      navigate("about");
     } else {
       localStorage.setItem("isAuthneticated", "false");
-      navigate("/login-failed");
+      navigate("login-failed");
     }
   };
   return (

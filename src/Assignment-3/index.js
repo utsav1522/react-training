@@ -1,13 +1,12 @@
-import Parent from "./components/Question-1-2/Parent";
-import IndexPage from "./components/Question3-4-5/indexPage";
-import ListParent from "./components/Question6";
+import AssignmentThreeRouter from "./AssignmentThreeRouter";
 
 const Assignment3 = () => {
   return (
     <>
       {/* <Parent /> */}
-      <IndexPage />
+      {/* <IndexPage /> */}
       {/* <ListParent /> */}
+      <AssignmentThreeRouter />
     </>
   );
 };

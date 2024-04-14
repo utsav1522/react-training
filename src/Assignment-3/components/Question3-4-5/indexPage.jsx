@@ -27,27 +27,25 @@ const IndexPage = () => {
     <LoginContext.Provider
       value={{ loginStatus: isLoggedin, setLoginStatus: setIsLoggedIn }}
     >
-      <BrowserRouter>
-        <Routes>
-          localStorage.setItem("isAuthneticated", isLoggedin)
-          <Route path="/" element={<Home />} />
-          {localStorage.getItem("isAuthneticated") === "true" ? (
-            <>
-              <Route path="about" element={<About />} />
-              <Route path="dashboard" element={<Dashboard />}>
-                <Route path="profile" element={<Profile />} />
-                <Route path="settings" element={<Settings />} />
-                <Route path="innovations" element={<Innovations />} />
-                <Route path="quick-links" element={<QuickLinks />} />
-              </Route>
-            </>
-          ) : (
-            <></>
-          )}
-          <Route path="*" element={<Error />} />
-          <Route path="login-failed" element={<UnauthenticatedPage />} />
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        localStorage.setItem("isAuthneticated", isLoggedin)
+        <Route path="" element={<Home />} />
+        {localStorage.getItem("isAuthneticated") === "true" ? (
+          <>
+            <Route path="about" element={<About />} />
+            <Route path="dashboard" element={<Dashboard />}>
+              <Route path="profile" element={<Profile />} />
+              <Route path="settings" element={<Settings />} />
+              <Route path="innovations" element={<Innovations />} />
+              <Route path="quick-links" element={<QuickLinks />} />
+            </Route>
+          </>
+        ) : (
+          <></>
+        )}
+        <Route path="*" element={<Error />} />
+        <Route path="login-failed" element={<UnauthenticatedPage />} />
+      </Routes>
     </LoginContext.Provider>
   );
 };

@@ -10,7 +10,7 @@ function About() {
           marginRight: "10px",
           textDecoration: "none",
         }}
-        to="/dashboard"
+        to="/assignment-3/question-2/dashboard"
       >
         Go to Dashboard
       </Link>
