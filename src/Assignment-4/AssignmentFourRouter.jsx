@@ -56,7 +56,6 @@ const AssignmentFourRouter = () => {
   return (
     <>
       <div
-        className="nav"
         style={{
           display: "flex",
           justifyContent: "space-between",
@@ -79,7 +78,7 @@ const AssignmentFourRouter = () => {
             paddingTop: "10px",
             paddingBottom: "10px",
             paddingLeft: "50px",
-            paddingRight: "50p",
+            paddingRight: "50px",
             borderRadius: "10px",
           }}
         >
