@@ -14,7 +14,7 @@ const style = {
   color: "white",
   textDecoration: "none",
 };
-function IndexOne() {
+const IndexOne = () => {
   return (
     <>
       <div
@@ -46,6 +46,6 @@ function IndexOne() {
       <RouteComponent />
     </>
   );
-}
+};
 
 export default IndexOne;

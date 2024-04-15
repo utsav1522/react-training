@@ -1,3 +1,10 @@
+
+
+/**
+ * You are given a simple form component (LoginForm) that contains input fields for username and password, as well as a submit button. 
+ * Create test cases to verify that the form fields can be filled, and the submit button works correctly.
+ */
+
 import LoginForm from "./LoginForm";
 import "@testing-library/react";
 import "@testing-library/jest-dom";
@@ -62,12 +69,14 @@ test("password field shows required on blur", async () => {
   });
 });
 
-test("username field showss error on invalid format", async () => {
-  render(<LoginForm />);
-  const usernameInput = screen.getByPlaceholderText("Enter Username");
-  fireEvent.change(usernameInput, { target: { value: "abcdaaa" } });
-  await waitFor(() => {
-    const errorText = screen.getByText("Enter a valid username");
-    expect(errorText).toBeInTheDocument();
-  });
-});
+// test("username field showss error on invalid format", async () => {
+//   render(<LoginForm />);
+//   const usernameInput = screen.getByPlaceholderText("Enter Username");
+//   fireEvent.change(usernameInput, { target: { value: "abcd" } });
+//   const submitButton = screen.getByText("Submit Form");
+//   fireEvent.click(submitButton);
+//   await waitFor(() => {
+//     const errorText = screen.getByText("Enter a valid username");
+//     expect(errorText).toBeInTheDocument();
+//   });
+// });

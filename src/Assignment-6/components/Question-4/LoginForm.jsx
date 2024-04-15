@@ -20,7 +20,7 @@ const LoginForm = () => {
         <Form>
           <label htmlFor="usernameInput">Username</label>
           <Field
-            data-test-id="usernameInput"
+            data-testid="usernameInput"
             type="email"
             id="usernameInput"
             name="username"
@@ -30,7 +30,7 @@ const LoginForm = () => {
           <br />
           <label htmlFor="passwordInput">Password</label>
           <Field
-            data-test-id="passwordInput"
+            data-testid="passwordInput"
             type="password"
             id="passwordInput"
             name="password"

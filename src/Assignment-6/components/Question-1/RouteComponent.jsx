@@ -1,6 +1,5 @@
 import React, { Suspense } from "react";
-import { Route, Link, Routes, BrowserRouter } from "react-router-dom";
-import { ErrorBoundary } from "react-error-boundary";
+import { Route, Routes } from "react-router-dom";
 import { lazy } from "react";
 const Home = lazy(() => import("./Home"));
 const SignIn = lazy(() => import("./SignIn"));
