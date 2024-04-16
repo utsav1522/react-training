@@ -1,2 +1,2 @@
-import MuiModal from "./Modal";
-export default MuiModal;
+import ModalComponent from "./ModalComponent";
+export default ModalComponent;

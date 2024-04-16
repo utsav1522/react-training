@@ -24,11 +24,6 @@ const ModalComponent = () => {
 
   return (
     <div>
-      <h4>
-        6.Create a React component (Modal) that displays a modal dialog with
-        content. Users can open and close the modal. Write tests to check if the
-        modal opens and closes when triggered.
-      </h4>
       <Button onClick={handleOpen}>Open modal</Button>
       <Modal open={open} onClose={handleClose}>
         <Box sx={style}>
