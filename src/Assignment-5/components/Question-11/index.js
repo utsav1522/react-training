@@ -1,9 +1,9 @@
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import React from "react";
 import FetchDataEleven from "./FetchDataEleven";
-
+import { urlLink } from "./config";
 const client = new ApolloClient({
-  uri: "http://localhost:4000",
+  uri: urlLink,
   cache: new InMemoryCache(),
 });
 

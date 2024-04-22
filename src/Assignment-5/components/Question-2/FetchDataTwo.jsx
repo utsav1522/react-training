@@ -10,8 +10,9 @@ const FetchDataTwo = () => {
   const [responseData, setResponseData] = useState([]);
   const [error, setError] = useState("");
   const [retry, setRetry] = useState(false);
-
   const [url, setUrl] = useState(errorUrl);
+  
+
   const processData = async () => {
     try {
       const response = await fetchData(url);

@@ -5,6 +5,7 @@ import {
   createHttpLink,
 } from "@apollo/client";
 import React from "react";
+import { urlLink } from "./config";
 
 import FetchDataEight from "./FetchDataEight";
 
@@ -19,7 +20,7 @@ import FetchDataEight from "./FetchDataEight";
 
 const client = new ApolloClient({
   // link: headers,
-  uri: "http://localhost:4000/",
+  uri: urlLink,
   cache: new InMemoryCache(),
 });
 

@@ -2,7 +2,7 @@ import React from "react";
 import { Navigate } from "react-router-dom";
 import Login from "./Login";
 
-const WithAuth = (WrappedComponent) => {
+const withAuth = (WrappedComponent) => {
   return function WithAuth(props) {
     const isAuthenticated = localStorage.getItem("login");
 
@@ -13,4 +13,4 @@ const WithAuth = (WrappedComponent) => {
     return <WrappedComponent {...props} isAuthenticated={isAuthenticated} />;
   };
 };
-export default WithAuth;
+export default withAuth;
