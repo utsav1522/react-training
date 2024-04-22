@@ -1,19 +1,20 @@
 /**
- * Implement error handling for the fetch request. 
+ * Implement error handling for the fetch request.
  * Display an error message if the request fails and provide a way for the user to retry the request.
  */
 import React, { useEffect, useState } from "react";
+import { fetchData } from "../../../libs/helper";
+import { errorUrl, correctUrl, styleButton, styleError } from "./config";
 
 const FetchDataTwo = () => {
   const [responseData, setResponseData] = useState([]);
   const [error, setError] = useState("");
   const [retry, setRetry] = useState(false);
-  const [url, setUrl] = useState(
-    "https://jsonplaceholder.typicode.com/commentsaaa"
-  );
-  const fetchData = async () => {
+
+  const [url, setUrl] = useState(errorUrl);
+  const processData = async () => {
     try {
-      const response = await fetch(url);
+      const response = await fetchData(url);
       const data = await response.json();
 
       if (!response.ok) {
@@ -31,22 +32,22 @@ const FetchDataTwo = () => {
   };
 
   useEffect(() => {
-    fetchData();
-  }, [retry, url]);
+    processData();
+  }, [url]);
 
   return (
     <div>
       {error !== "" ? (
-        <div style={{ color: "red" }}>
+        <div style={styleError}>
           <p>Error Code: {error.status}</p>
 
           <button
-            style={{ padding: "10px", margin: "10px", borderRadius: "10px" }}
+            style={styleButton}
             onClick={() => {
               console.log("Retrying....");
-              setUrl("https://jsonplaceholder.typicode.com/comments");
+              setUrl(correctUrl);
               console.log("Url:", url);
-              setError("")
+              setError("");
               setRetry(true);
             }}
           >

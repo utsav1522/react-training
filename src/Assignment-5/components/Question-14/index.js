@@ -1,2 +1,2 @@
-import ProtectedComponent from "./ProtectedComponent";
-export default ProtectedComponent;
+import BaseComponent from "./BaseComponent";
+export default BaseComponent;

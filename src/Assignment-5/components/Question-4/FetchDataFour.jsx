@@ -4,6 +4,8 @@
  */
 
 import React, { useEffect, useState } from "react";
+import { url, styleButton, divStyle } from "./config";
+import { fetchData } from "../../../libs/helper";
 
 const FetchDataFour = () => {
   const [data, setData] = useState([]);
@@ -13,11 +15,9 @@ const FetchDataFour = () => {
     min: 0,
     max: 10,
   });
-  const fetchData = async () => {
+  const processData = async () => {
     try {
-      const response = await fetch(
-        "https://jsonplaceholder.typicode.com/comments"
-      );
+      const response = await fetchData(url);
       const responseData = await response.json();
       if (!response.ok) {
         throw response;
@@ -33,7 +33,7 @@ const FetchDataFour = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      fetchData();
+      processData();
     }, 3000);
   }, [loading]);
   return (
@@ -42,18 +42,13 @@ const FetchDataFour = () => {
       {error !== "" ? (
         <h1>Error Code: {error.status}</h1>
       ) : loading === false ? (
-        <div
-          style={{
-            padding: "10px",
-            margin: "10px",
-          }}
-        >
+        <div style={divStyle}>
           {data
             .filter((ele, index) => {
               if (ele.id > range.min && ele.id < range.max) return ele;
             })
             .map((ele, index) => {
-              return <li>{ele.body}</li>;
+              return <li key={index}>{ele.body}</li>;
             })}
           <div
             style={{
@@ -64,11 +59,7 @@ const FetchDataFour = () => {
           >
             {range.min >= 10 ? (
               <button
-                style={{
-                  padding: "10px",
-                  margin: "10px",
-                  borderRadius: "10px",
-                }}
+                style={styleButton}
                 onClick={() => {
                   const updateValue = {
                     min: range.min - 10,
@@ -83,11 +74,7 @@ const FetchDataFour = () => {
             ) : null}
             {range.min} - {range.max}
             <button
-              style={{
-                padding: "10px",
-                margin: "10px",
-                borderRadius: "10px",
-              }}
+              style={styleButton}
               onClick={() => {
                 const updateValue = {
                   min: range.min + 10,

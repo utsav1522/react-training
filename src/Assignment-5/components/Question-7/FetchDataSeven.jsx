@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { validationSchema } from "./validationSchema";
-
+import { url } from "./config";
 const FetchDataSeven = () => {
   const [response, setResponse] = useState([]);
   const [error, setError] = useState("");
@@ -19,14 +19,11 @@ const FetchDataSeven = () => {
 
   const onSubmit = async (values) => {
     try {
-      const response = await axios.post(
-        "https://jsonplaceholder.typicode.com/posts",
-        {
-          name: values.name,
-          email: values.email,
-          username: values.username,
-        }
-      );
+      const response = await axios.post(url, {
+        name: values.name,
+        email: values.email,
+        username: values.username,
+      });
       console.log(response);
       if (response.status !== 201) {
         throw response;

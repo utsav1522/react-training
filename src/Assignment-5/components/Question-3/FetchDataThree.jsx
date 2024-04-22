@@ -1,20 +1,20 @@
 /**
- * Add a loading indicator (e.g., a spinner) to the component. 
+ * Add a loading indicator (e.g., a spinner) to the component.
  * Display it while the data is being fetched and hide it once the data is loaded.
  */
 
 import React, { useEffect, useState } from "react";
+import { fetchData } from "../../../libs/helper";
+import { url } from "./config";
 
 function FetchDataThree() {
   const [data, setData] = useState([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
 
-  const fetchData = async () => {
+  const processData = async () => {
     try {
-      const response = await fetch(
-        "https://jsonplaceholder.typicode.com/comments"
-      );
+      const response = await fetchData(url);
       const responseData = await response.json();
       if (!response?.ok) {
         throw response;
@@ -31,7 +31,7 @@ function FetchDataThree() {
 
   useEffect(() => {
     setTimeout(() => {
-      fetchData();
+      processData();
     }, 3000);
   }, [error, data, loading]);
 

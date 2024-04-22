@@ -9,9 +9,7 @@ const Routers_14 = () => {
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
-      <Route element={<ProtectedComponent />}>
-        <Route path="page" element={<BaseComponent />} />
-      </Route>
+      <Route path="./assignment-5/question-14/page" element={<BaseComponent />} />
     </Routes>
   );
 };

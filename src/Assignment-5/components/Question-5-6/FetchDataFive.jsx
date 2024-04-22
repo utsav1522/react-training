@@ -5,11 +5,10 @@
 
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { urlLink, buttonStyle, correctUrl } from "./config";
 
 const FetchDataFive = () => {
-  const [url, setUrl] = useState(
-    "https://jsonplaceholder.typicode.com/todosss"
-  );
+  const [url, setUrl] = useState(urlLink);
   const [responseData, setResponseData] = useState([]);
   const [error, setError] = useState("");
 
@@ -49,13 +48,9 @@ const FetchDataFive = () => {
               }}
             >
               <button
-                style={{
-                  padding: "10px",
-                  margin: "10px",
-                  borderRadius: "10px",
-                }}
+                style={buttonStyle}
                 onClick={() => {
-                  setUrl("https://jsonplaceholder.typicode.com/todos");
+                  setUrl(correctUrl);
                 }}
               >
                 Retry ...

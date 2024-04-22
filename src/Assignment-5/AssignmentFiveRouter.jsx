@@ -1,5 +1,6 @@
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { Suspense, lazy } from "react";
+import Login from "./components/Question-14/Login";
 
 const FetchDataOne = lazy(() => import("./components/Question-1"));
 const FetchDataTwo = lazy(() => import("./components/Question-2"));
@@ -15,8 +16,6 @@ const Home = lazy(() => import("./components/Question-12"));
 const HomeThirteen = lazy(() => import("./components/Question-13"));
 const OriginalComponent = lazy(() => import("./components/Question-15"));
 const Component = lazy(() => import("./components/Question-16"));
-const ProtectedComponent = lazy(() => import("./components/Question-14"));
-
 const AssignmentFiveRouter = () => {
   const navigate = useNavigate();
   const options = [
@@ -47,17 +46,20 @@ const AssignmentFiveRouter = () => {
           display: "flex",
           padding: "10px",
           justifyContent: "space-between",
-          alignItems: "center", 
+          alignItems: "center",
         }}
       >
         <h1>Assignment - 5</h1>
-        <select onChange={onChangeHandler} style={{
-          paddingTop: "10px",
-          paddingBottom: "10px",
-          paddingLeft: "50px",
-          paddingRight: "50px",
-          borderRadius: "10px"
-        }}>
+        <select
+          onChange={onChangeHandler}
+          style={{
+            paddingTop: "10px",
+            paddingBottom: "10px",
+            paddingLeft: "50px",
+            paddingRight: "50px",
+            borderRadius: "10px",
+          }}
+        >
           <option>Select Question in Assignment - 5</option>
           {options.map((ele, index) => {
             return <option key={index}>{ele}</option>;
@@ -72,14 +74,14 @@ const AssignmentFiveRouter = () => {
           <Route path="question-3" element={<FetchDataThree />} />
           <Route path="question-4" element={<FetchDataFour />} />
           <Route path="question-5" element={<FetchDataFive />} />
-          <Route path="question-6" element={<FetchDataSix />} />
+          <Route path="question-6" element={<FetchDataFive />} />
           <Route path="question-7" element={<FetchDataSeven />} />
           <Route path="question-8" element={<IndxQuestionEight />} />
           <Route path="question-9" element={<IndexNine />} />
           <Route path="question-11" element={<IndexEleven />} />
           <Route path="question-12" element={<Home />} />
           <Route path="question-13" element={<HomeThirteen />} />
-          <Route path="question-14" element={<ProtectedComponent />} />
+          <Route path="question-14" element={<Login />} />
           <Route path="question-15" element={<OriginalComponent />} />
           <Route path="question-16" element={<Component />} />
         </Routes>
