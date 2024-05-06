@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-const Home = () => {
+function Home() {
   return (
     <div>
       <h2>The endpoints are: </h2>
@@ -11,6 +11,6 @@ const Home = () => {
       <Outlet />
     </div>
   );
-};
+}
 
 export default Home;

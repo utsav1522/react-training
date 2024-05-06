@@ -1,4 +1,4 @@
-const useLocalStorage = () => {
+function useLocalStorage() {
   const localStorage = window.localStorage;
   const setItems = (key, value) => {
     localStorage.setItem(key.toString(), value.toString());
@@ -14,6 +14,6 @@ const useLocalStorage = () => {
   };
   const deleteAll = () => [localStorage.clear()];
   return { setItems, getItems, deleteKey, deleteAll };
-};
+}
 
 export default useLocalStorage;

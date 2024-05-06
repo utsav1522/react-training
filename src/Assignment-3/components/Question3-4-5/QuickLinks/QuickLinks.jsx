@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react'
 
-const QuickLinks = () => {
+function QuickLinks() {
   return (
-    <div>
+    <div> 
       <h1>Quick Links ....</h1>
     </div>
-  );
-};
+  )
+}
 
-export default QuickLinks;
+export default QuickLinks

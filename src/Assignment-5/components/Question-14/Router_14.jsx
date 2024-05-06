@@ -4,6 +4,7 @@ import ProtectedComponent from "./ProtectedComponent";
 import Login from "./Login";
 import BaseComponent from "./BaseComponent";
 import ErrorPage from "./ErrorPage";
+import withAuth from "./withAuth";
 
 const Routers_14 = () => {
   return (

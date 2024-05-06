@@ -1,11 +1,11 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-const ShowItems = () => {
+function ShowItems() {
   return (
     <div>
       <Outlet />
     </div>
   );
-};
+}
 
 export default ShowItems;

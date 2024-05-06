@@ -1,6 +1,6 @@
 import React from "react";
 
-const Settings = () => {
+function Settings() {
   return (
     <div>
       <h1>Settings Section</h1>
@@ -13,6 +13,6 @@ const Settings = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Settings;

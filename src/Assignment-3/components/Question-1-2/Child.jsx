@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AuthenticationContext, ThemeContext } from "./Parent";
-const Child = () => {
+function Child() {
   const { loginStatus, setLoginStatus } = useContext(AuthenticationContext);
   const { theme, setTheme } = useContext(ThemeContext);
 
@@ -68,6 +68,6 @@ const Child = () => {
       )}
     </>
   );
-};
+}
 
 export default Child;
