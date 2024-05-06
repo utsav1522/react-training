@@ -7,7 +7,7 @@ import React, { useEffect, useState } from "react";
 import { fetchData } from "../../../libs/helper";
 import { url } from "./config";
 
-function FetchDataThree() {
+const FetchDataThree = () => {
   const [data, setData] = useState([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
@@ -53,6 +53,6 @@ function FetchDataThree() {
       )}
     </div>
   );
-}
+};
 
 export default FetchDataThree;

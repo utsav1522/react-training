@@ -14,7 +14,7 @@ import { gql } from "@apollo/client";
 import { useQuery } from "@apollo/client";
 import React, { useState } from "react";
 
-function ClientNine() {
+const ClientNine = () => {
   const [pageRange, setPagRange] = useState({
     min: 0,
     max: 10,
@@ -69,12 +69,14 @@ function ClientNine() {
             );
           })}
       </ul>
-      <div style={{
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent:"center"
-      }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         {pageRange.min >= 10 ? (
           <button
             style={{
@@ -119,6 +121,6 @@ function ClientNine() {
       </div>
     </div>
   );
-}
+};
 
 export default ClientNine;

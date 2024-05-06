@@ -1,6 +1,6 @@
 import React from "react";
 
-function Innovations() {
+const Innovations = () =>  {
   return (
     <div>
       <h1>Innovations Section</h1>

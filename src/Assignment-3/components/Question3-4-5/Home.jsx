@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LoginContext } from "./indexPage";
-function Home() {
+const Home = () => {
   const navigate = useNavigate();
 
   const [username, setUsername] = useState("");
@@ -66,6 +66,6 @@ function Home() {
       </div>
     </div>
   );
-}
+};
 
 export default Home;

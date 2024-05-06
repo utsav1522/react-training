@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { items } from "./Mock";
-function SingleItems() {
+const SingleItems = () => {
   const { id } = useParams();
   return (
     <div>
@@ -14,5 +14,5 @@ function SingleItems() {
       </ul>
     </div>
   );
-}
+};
 export default SingleItems;

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-function About() {
+const About = () => {
   return (
     <div>
       <h2>This is the About Page </h2>
@@ -16,6 +16,6 @@ function About() {
       </Link>
     </div>
   );
-}
+};
 
 export default About;

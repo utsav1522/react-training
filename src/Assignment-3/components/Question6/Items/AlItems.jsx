@@ -1,7 +1,7 @@
 import React from "react";
 import { items } from "./Mock";
 
-function AllItems() {
+const AllItems = () => {
   return (
     <div>
       <h1>Items List is :</h1>
@@ -19,6 +19,6 @@ function AllItems() {
       </ul>
     </div>
   );
-}
+};
 
 export default AllItems;
